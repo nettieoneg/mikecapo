@@ -11,17 +11,54 @@
     
     <body>
         <header>
-            <h1>Contact Us</h1>
+            <h1>Stew's Italian Restaurant</h1>
         </header>
 		
 
         <nav> 
-		
+		<hr />
+			<p><a href="Home Page.html">Home</a></p>
+			<p><a href="menu.html">Menu</a></p>
+			<p><a href="contact us.html">Contact Us</a></p>
+		<hr />
         </nav>
-
-
+		
+		<form action="sendrequest.html" method="POST">
+			<label for="Name">Name:</label> <br />
+			<input type="text" id="Name" name="Name"> <br />
+			<label for="Email">Email:</label> <br />
+			<input type="text" id="Email" name="Email"> <br />
+			<label for="Phone">Phone:</label> <br />
+			<input type="text" id="Phone" name="Phone"> <br />
+		<label for="Reason for Inquiry">Reason for Inquiry:</label>
+		<br>
+		<select name="Reason for Inquiry">
+			<option value="Catering">Catering</option>
+			<option value="Private Party">Private Party</option>
+			<option value="Feedback">Feedback</option>
+			<option value="Other">Other</option>
+		</select>
+		</br>
+			<label for="additionalInformation">Additional Information:</label>
+			<textarea name="additionalInformation"></textarea><br />
+		Have you been to the restaurant?<br />
+			<input type="radio" name="answer" value="No" checked />No<br />
+			<input type="radio" name="answer" value="Yes" />Yes<br />
+			<label for="Best days to contact you">Best days to contact you:</label></br>
+		    <input type="checkbox" name="days" value="Monday" checked/>M<br />
+			<input type="checkbox" name="days" value="Tuesday" checked/>T<br />
+			<input type="checkbox" name="days" value="Wednesday" checked/>W<br />
+			<input type="checkbox" name="days" value="Thursday" checked/>Th<br />	
+			<input type="checkbox" name="days" value="Friday" checked/>F<br />	
+			
+			<input type="submit" class="sendrequest" value="Send Request" />
+		
+		
+		
         <footer>
-
+		<hr />
+			<p>100 Main Street, Charlotte, NC 28210</p>
+			<p>555-555-5555</p>
         </footer>
     </body> 
-</html
+</html>
