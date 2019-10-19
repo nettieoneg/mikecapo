@@ -2,34 +2,39 @@
 <!--
 Name: Mike Capobianco
 Date Created: 10/14/2019
-Most recent revision: 10/15/2019
+Most recent revision: 10/18/2019
 --> 
 <html lang="en">
 <head>
 	<title>Mike Capobianco's Portfolio</title>
+	<link href="teststyles.css" rel="stylesheet" type="text/css" />
+	<style>
+		 header {
+        background-color: darkgray;
+    }	
+    </style>
 </head>
 
 <body>
 
-		<header>
+		<header style="background-color: fuchsia">
 			<h1>Mike Capobianco's Portfolio</h1>
 		</header>
 
-	<hr />
+	
 		<nav><!-- The nav element will include navigation buttons or links -->
-			<hr />
+			<nav class="border">
+			<hr style="border: thin dotted red;" />
 			<p><a href="projects.html">Projects</a></p>
 			<p><a href="contact.html">Contact</a></p>
 			<p><a href="testimonials.html">Testimonials</a></p>
-			<hr />
+			<hr style="width: 90%; border: 2px solid green;" />
 		</nav>
-	<hr />
-
 			
 		<section>
 			<article id="about-me">
 				<h2><em>About Me</em></h2>
-				
+				<article class="border" id="about" >
 				<p>My name is Mike Capobianco. I work as a <strong>Quality Engineer</strong> in the manufacturing industry. My job consists mainly of
 				problem solving and putting out proverbial fires.</p> 
 				<p>I am married and have <strong>2 children</strong>. <span style="background-color: red;">We also have 4 cats at home. My children are boy-girl twins and are almost 3 
@@ -38,6 +43,7 @@ Most recent revision: 10/15/2019
 
 			<article id="past-experiences">
 				<h2><em>Past Experiences</em></h2>
+				<article class="border" id="experience" >
 				<img src="images/engineering.jpg" alt="Engineering" width="250" />
 				<table>
 				<caption>Employment History</caption>
@@ -102,7 +108,7 @@ Most recent revision: 10/15/2019
 		</article>
 		</section>
 
-	<footer>
+	<footer style="background-color: fuchsia">
 		<hr />
 		<p>&copy; 2019 Mike Capobianco. All rights reserved.</p>
 	</footer>
