@@ -7,74 +7,110 @@ Most recent revision: 10/18/2019
 <html lang="en">
 <head>
 	<title>Mike Capobianco's Portfolio</title>
-	<link href="teststyles.css" rel="stylesheet" type="text/css" />
+	<link href="styles/main.css" rel="stylesheet" type="text/css" />
+	
 	<style>
-		 header {
-        background-color: darkgray;
-    }	
-    </style>
-</head>
+		caption {
+		font-weight: bold;
+		font-size: 1.2em;
+		margin-bottom: 8px;
+	}
+		table, th, td {
+		border: 1px solid #0d1f2d;
+		border-collapse: collapse;
+		padding: 5px 10px;
+	}
+		table {
+		width: 90%;
+		margin: auto;
+	}
+		tr {
+		height: 30px;
+	}
+		th {
+		background-color: #f2eded; 
+	}
+	tbody tr:nth-child(odd) {
+		background-color: #e4c3ad; 
+	}
+		article img {
+		float:left;
+	}
+		.right-content {
+		float:left;
+	}
+		article {
+		margin-bottom: 16px;
+	}
+	</style>
+</head>	
+	
 
-<body>
-
-		<header style="background-color: fuchsia">
+	<body>
+		<main>
+			<header style="background-color: gray">
 			<h1>Mike Capobianco's Portfolio</h1>
 		</header>
 
 	
 		<nav><!-- The nav element will include navigation buttons or links -->
-			<nav class="border">
-			<hr style="border: thin dotted red;" />
 			<p><a href="projects.html">Projects</a></p>
 			<p><a href="contact.html">Contact</a></p>
 			<p><a href="testimonials.html">Testimonials</a></p>
-			<hr style="width: 90%; border: 2px solid green;" />
+			<div class="clear-float"></div>
 		</nav>
 			
 		<section>
 			<article id="about-me">
 				<h2><em>About Me</em></h2>
 				<article class="border" id="about" >
-				<p>My name is Mike Capobianco. I work as a <strong>Quality Engineer</strong> in the manufacturing industry. My job consists mainly of
-				problem solving and putting out proverbial fires.</p> 
-				<p>I am married and have <strong>2 children</strong>. <span style="background-color: red;">We also have 4 cats at home. My children are boy-girl twins and are almost 3 
-				years old.</span></p>
+				<img src="images/me.png" alt="Me" width="250" />
+					<p>My name is Mike Capobianco. I work as a <strong>Quality Engineer</strong> in the manufacturing industry. My job consists mainly of
+					problem solving and putting out proverbial fires.</p> 
+					<p>I am married and have <strong>2 children</strong>. <span style="background-color: red;">We also have 4 cats at home. My children are boy-girl twins and are almost 3 
+					years old.</span></p>
+					<div class="clear-float"></div>
 			</article>
 
 			<article id="past-experiences">
 				<h2><em>Past Experiences</em></h2>
-				<article class="border" id="experience" >
 				<img src="images/engineering.jpg" alt="Engineering" width="250" />
-				<table>
+				<div class="right-content">
+			<table>
 				<caption>Employment History</caption>
-				<tr>
-				<th>Years of Employment</th>
-				<th>Title</th>
-				<th>Company</th>
-				</tr>
-				<tr>
-					<td>2017-Present</td>
-					<td>Quality Engineer</td>
-					<td>TC Transcontinental</td>
-				</tr>
-				<tr>
-					<td>2016-2017</td>
-					<td>Energy Engineer</td>
-					<td>Energy Wise Solutions</td>
-				</tr>
-				<tr>
-					<td>2013-2015</td>
-					<td>Student</td>
-					<td>Long Island University</td>
-				</tr>	
-				
-				</table>
-
+				<thead>
+					<tr>
+						<th>Years of Employment</th>
+						<th>Title</th>
+						<th>Company</th>
+					</tr>
+				</thead>
+				<tbody>		
+					<tr>
+						<td>2017-Present</td>
+						<td>Quality Engineer</td>
+						<td>TC Transcontinental</td>
+					</tr>
+					<tr>
+						<td>2016-2017</td>
+						<td>Energy Engineer</td>
+						<td>Energy Wise Solutions</td>
+					</tr>
+					<tr>
+						<td>2013-2015</td>
+						<td>Student</td>
+						<td>Long Island University</td>
+					</tr>	
+				<t/body>
+			</table>
+				</div>
+			<div class="clear-float"></div>
 			</article>
 
 			<article id="hobbies">
 				<h2><em>Hobbies</em></h2>
 				<img src="images/nature.jpg" alt="Nature" />
+				 <div class="right-content">
 			<ul>
 				<li>Authors</li>
 				<ol>
@@ -103,17 +139,15 @@ Most recent revision: 10/18/2019
 					<li>Hiking</li>
 				</ul>
 			</ul>
-				
-				
+				 </div>
+				<div class="clear-float"></div>
 		</article>
 		</section>
 
-	<footer style="background-color: fuchsia">
-		<hr />
-		<p>&copy; 2019 Mike Capobianco. All rights reserved.</p>
-	</footer>
-	
-
-
-</body>
-</html>
+		<footer style="background-color: gray">
+			<hr />
+			<p>&copy; 2019 Mike Capobianco. All rights reserved.</p>
+		</footer>
+	</main>
+	</body>
+</html>	
