@@ -12,7 +12,39 @@ Most recent revision: 10/15/2019
 <style>
 	body{
       background-color:gray;
-      }
+    }
+	  table, th, td {
+		border: none;
+		border-collapse: collapse;
+	}
+	
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		padding-top: 5px;
+		padding-right: 0px;
+		padding-bottom: 5px;
+		padding-left: 10px;
+	}
+	
+	table {
+		width: 70%;
+	}
+
+	th {
+		height: 70px;
+	}
+	
+	caption {
+		text-align: left;
+		font-weight: bold;
+	}
+	table td { 
+		border:0; 
+	}	
+	tbody tr:nth-child(odd) {
+		background-color: darkgray;
+	}
    </style>	
 </head>
 
@@ -53,8 +85,30 @@ Most recent revision: 10/15/2019
 		<b><span style="font-size: 20px">Florentina Pizza</span></b>
 		<p>Chicken, spinach, ricotta, pesto, mozzarella</p>
 		<p>$23.95</p>
-
-			
+		
+	<table>
+    <caption>Beverages</caption>
+    <tbody>
+        <tr>
+          <td>Root Beer</td>
+          <td>$3.00</td>
+        </tr>
+        <tr>
+          <td>Bottled Water</td>
+          <td>$1.25</td>
+        </tr>
+        <tr>
+          <td>Lemonade</td>
+          <td>$1.00</td>
+        </tr>
+        <tr>
+          <td>Iced Tea</td>
+          <td>$1.25</td>
+        </tr>
+    </tbody>
+</table>
+		
+	<hr />		
 		<footer>	
 			<p>100 Main Street, Charlotte, NC 28210</p>
 			<p>555-555-5555</p>
