@@ -1,0 +1,20 @@
+/*
+Creator: Mike Capobianco
+Date created: 10/19/2019
+Date last modified: 
+*/
+
+
+header {
+    background-color: darkgray;
+    color: #fef9ff;
+	height: 100px;
+	text-align: center;
+	padding: 30px 10px 20px 10px;
+
+footer {
+    background-color: #5b7d87;
+    color: #fef9ff;
+	height: 100px;
+	text-align: left;
+	padding: 30px 10px 20px 10px;
