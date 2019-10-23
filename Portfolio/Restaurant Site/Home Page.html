@@ -2,18 +2,37 @@
 <!--
 Name: Mike Capobianco
 Date Created: 10/14/2019
-Most recent revision: 10/15/2019
+Most recent revision: 10/23/2019
 --> 
 
 <html lang="eng">
 <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Home Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+	<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+	
 	<style>
+	nav {
+    padding-top: 12px;
+    padding-bottom: 12px;
+	  }
 	body{
       background-color:gray;
       }
+	nav .btn {
+    background-color: #5b7d87;
+    color: #fef9ff; 
+} 
    </style>
+   <div class="container">
+  <div class="jumbotron">
+    <h1>We are opening a new location!</h1>
+    <p>Look out for our new location in Times Square, right in the heart of NYC!</p>
+  </div>
+</div>
 </head>
 
 <body>
@@ -22,22 +41,37 @@ Most recent revision: 10/15/2019
 		<h1>Stew's Italian Restaurant</h1>
 	</header>
 	
+		<hr />
 	<nav>
-		<hr />
-			<p><a href="Home Page.html">Home</a></p>
-			<p><a href="menu.html">Menu</a></p>
-			<p><a href="contact us.html">Contact Us</a></p>
-		<hr />
+			<a class="fas fa-home" href="Home Page.html">Home</a>
+			<a class="btn badge-pill" href="menu.html">Menu</a>
+			<a class="btn badge-pill" href="contact us.html">Contact Us</a>
 	</nav>	
-	
-			<img src="img/spagetti.jpg" alt="Spagetti" width="250" style="float:left;" />
-			
+		<hr />	
+
+    
+    <noscript>
+      <div style="border: 1px solid purple; padding: 10px">
+        <span style="color:red">This site is best viewed with JavaScript enabled!</span>
+      </div>
+    </noscript>
+ 
+		<div class="row">
+					<div class="col-lg-3 col-md">
+					<img src="img/spagetti.jpg" alt="Spagetti" width="250" style="float:left;" />
+				</div>	
+				<div class="col-lg-9 col-md">
 			<p>Stew's Italian Restauarant serves an authenic Southern Italian cuisine. It is run by
 				family and has been open for 50 years. Please check us out and let us know what you 
 				think!</p>
+				</div>
 				<div style="clear:both"></div>
+		</div>		
 		<hr />
-		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>		
 		<footer>
 			<p>100 Main Street, Charlotte, NC 28210</p>
 			<p>555-555-5555</p>

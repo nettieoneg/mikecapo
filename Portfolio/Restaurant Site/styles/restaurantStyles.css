@@ -43,3 +43,14 @@ a:hover {
 a:active {
   font-weight: none;
 }
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

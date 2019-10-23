@@ -2,13 +2,25 @@
 <!--
     Name: Mike Capobianco
     Date Created: 10/15/2019
-    Most recent revision:
+    Most recent revision: 10/23/19
 -->
 <html lang="en"> 
     <head> 
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Contact Us</title>
 		<link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
 	<style>
+	nav {
+    padding-top: 12px;
+    padding-bottom: 12px;
+	  }
+	nav .btn {
+    background-color: #5b7d87;
+    color: #fef9ff; 
+	}
 	body{
       background-color:gray;
       }
@@ -25,20 +37,32 @@
 		
 
         <nav> 
-		<hr />
-			<p><a href="Home Page.html">Home</a></p>
-			<p><a href="menu.html">Menu</a></p>
-			<p><a href="contact us.html">Contact Us</a></p>
-		<hr />
+			<nav>
+			<a class="fas fa-home" href="Home Page.html">Home</a>
+			<a class="btn badge-pill" href="menu.html">Menu</a>
+			<a class="btn badge-pill" href="contact us.html">Contact Us</a>
+	</nav>	
         </nav>
 		
-		<form action="sendrequest.html" method="POST">
+		<form action="sendrequest.html" class="was-validated" method="POST">
+			<div class="form group">
 			<label for="Name">Name:</label> <br />
-			<input type="text" id="Name" name="Name"> <br />
+			<input type="text" class="form-control" id="Name" placeholder="Enter name" name="Name" required> <br />
+			<div class="valid-feedback">Valid.</div>
+			<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+			<div class="form group">
 			<label for="Email">Email:</label> <br />
-			<input type="text" id="Email" name="Email"> <br />
+			<input type="text" class="form-control" id="Email" placeholder="Enter email" name="Email" required> <br />
+			<div class="valid-feedback">Valid.</div>
+			<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+			<div class="form group">
 			<label for="Phone">Phone:</label> <br />
-			<input type="text" id="Phone" name="Phone"> <br />
+			<input type="text" class="form-control" id="Phone" placeholder="Enter phone" name="Phone" required> <br />
+			<div class="valid-feedback">Valid.</div>
+			<div class="invalid-feedback">Please fill out this field.</div>
+			</div>
 		<label for="Reason for Inquiry">Reason for Inquiry:</label>
 		<br>
 		<select name="Reason for Inquiry">
@@ -68,5 +92,8 @@
 			<p>100 Main Street, Charlotte, NC 28210</p>
 			<p>555-555-5555</p>
         </footer>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body> 
 </html>
