@@ -51,8 +51,25 @@ The columns to create (one per row of this spec table):
 | `DecisionComments`| Multiple lines      | Plain text                                   |
 | `DecisionDate`    | Date and time       |                                              |
 
+### The EWR number
+
 The list's built-in **ID** column is the EWR number. Free, unique, no counter to
-maintain. Add it to the default view.
+maintain. Every list already has it — it is hidden by default, so unhide it
+rather than creating it:
+
+1. Open the list, click the **+** at the far right of the column headers, and
+   choose **Show or hide columns**.
+   (Or **Settings > List settings > Views**, click the view, tick **ID**.)
+2. Tick **ID**, drag it to the top of the panel so it renders leftmost, **Apply**.
+
+Behavior to expect:
+
+- SharePoint assigns it on row creation. It cannot be edited, and the flow does
+  not set it.
+- Numbers are never reused — delete #7 and the next request is still #8. Gaps
+  are normal and do not mean a request went missing.
+- It starts at 1 and cannot be made to start elsewhere. Test submissions consume
+  the first few numbers; delete the test rows and let the counter run on.
 
 Optional 2-minute win: save a view called **Pending** filtered to
 `Status = Submitted`, sorted oldest-first. That is the whole follow-up system for v1.
