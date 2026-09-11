@@ -22,7 +22,19 @@ Microsoft Form  ──▶  Power Automate flow  ──▶  SharePoint list (reco
 ## Step 1 — SharePoint list: `EWR Requests`
 
 Create a blank list in the team's SharePoint site. Rename the default **Title**
-column to `Request Title`, then add:
+column to `Request Title`, then add the rest.
+
+A SharePoint list is a table. Everything below is a **column**, created once by
+hand. Each submitted request becomes a new **row** (SharePoint calls a row an
+*item*), added automatically by the flow — so the list fills up downward and its
+structure never changes:
+
+| ID | Request Title           | RequestType | Requester   | Status    | ... |
+|----|-------------------------|-------------|-------------|-----------|-----|
+| 1  | Guard rail on mezzanine | EHS         | mike@co.com | Approved  | ... |
+| 2  | Replace conveyor motor  | Maintenance | dana@co.com | Submitted | ... |
+
+The columns to create (one per row of this spec table):
 
 | Column            | Type                | Notes                                        |
 |-------------------|---------------------|----------------------------------------------|
