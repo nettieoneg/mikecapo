@@ -177,6 +177,39 @@ flow waits until every person listed has responded.
 
 ---
 
+## Sending mail from a mailbox other than your own
+
+Every Power Automate action runs under the connection of whoever owns the flow,
+so `Send an email (V2)` sends **as you**. That is how the platform works, not a
+misconfiguration. To change the visible sender you need a mailbox you hold
+*Send As* rights on:
+
+1. Have a **shared mailbox** created in the Exchange admin center — e.g.
+   `ewr@company.com`, display name "EWR Requests". Shared mailboxes require no
+   license.
+2. Have yourself added to it with **Send As** permission.
+3. In the flow, replace `Send an email (V2)` with **`Send an email from a shared
+   mailbox (V2)`** (same connector, different action) and set **Mailbox address**
+   to the shared mailbox.
+4. Set **Reply-To** to the shared mailbox as well, and make sure someone watches
+   it — requesters will reply to these messages.
+
+Notes:
+
+- Permission changes take roughly 15–60 minutes to propagate. An immediate
+  failure after the grant usually means "not yet", not "broken".
+- There is no way to set an arbitrary From address without Send As permission;
+  Microsoft blocks it to prevent spoofing. The admin step is unavoidable.
+- This changes the visible sender only. The flow still runs on your connection:
+  failure notices come to you, and it stops working if your account is disabled.
+  Add a co-owner to the flow now; move it to a licensed service account if the
+  flow needs to outlive your role.
+- Approval notifications are sent by the Power Automate approvals service, not
+  your mailbox, though your name appears as the requester inside them. Only the
+  `Send an email` actions carry your address.
+
+---
+
 ## Step 4 — Test before announcing
 
 1. Put **your own email** in every Switch case and submit one request per type.
