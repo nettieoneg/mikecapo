@@ -171,8 +171,10 @@ flow waits until every person listed has responded.
   — this captures the first approver's comment. `responses` is an array of
   objects, so `join()` over it does **not** work; to capture every comment, add a
   **Select** action mapping `comments` and `join()` the Select's output instead.
-  **Update item re-shows every required column and blanks any you leave empty** —
-  re-map `Request Title` here or it is wiped.
+  Note on `Update item`: a column you omit entirely is not sent and keeps its
+  value. The blanking risk is narrower — a field *included* with an empty value
+  can overwrite what is there — so leave columns you are not changing out of the
+  action rather than present-and-blank.
 - Outlook → **Send an email (V2)** to `Requester`: "EWR #ID approved."
 
 **If no:**
