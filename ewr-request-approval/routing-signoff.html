@@ -1,0 +1,735 @@
+<title>EWR Routing Sign-Off</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --paper:       #F3F4F1;
+    --surface:     #FFFFFF;
+    --ink:         #1C242B;
+    --ink-2:       #4B565F;
+    --ink-3:       #78838B;
+    --rule:        #D3D7D2;
+    --rule-strong: #A9B0AB;
+    --signal:      #A8500F;
+    --signal-soft: #F6EADF;
+    --ok:          #2C6249;
+    --warn:        #8A6410;
+    --stop:        #9B2F2F;
+
+    --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --body:    "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper:       #14191D;
+      --surface:     #1B2126;
+      --ink:         #E6E8E4;
+      --ink-2:       #A9B2B8;
+      --ink-3:       #7C868D;
+      --rule:        #2C343A;
+      --rule-strong: #414B52;
+      --signal:      #E2934F;
+      --signal-soft: #2A211A;
+      --ok:          #74B694;
+      --warn:        #D6A94A;
+      --stop:        #E08585;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper:       #14191D;
+    --surface:     #1B2126;
+    --ink:         #E6E8E4;
+    --ink-2:       #A9B2B8;
+    --ink-3:       #7C868D;
+    --rule:        #2C343A;
+    --rule-strong: #414B52;
+    --signal:      #E2934F;
+    --signal-soft: #2A211A;
+    --ok:          #74B694;
+    --warn:        #D6A94A;
+    --stop:        #E08585;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .sheet {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 40px 64px;
+  }
+
+  /* ---------- document header ---------- */
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 5.5vw, 2.9rem);
+    line-height: 1.08;
+    letter-spacing: -0.021em;
+    text-wrap: balance;
+    margin: 0 0 14px;
+  }
+
+  .lede {
+    font-size: clamp(1rem, 2.4vw, 1.12rem);
+    color: var(--ink-2);
+    max-width: 46rem;
+    margin: 0;
+  }
+
+  .lede strong { color: var(--ink); font-weight: 600; }
+
+  .docmeta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-block: 30px 0;
+  }
+
+  .docmeta div {
+    background: var(--surface);
+    padding: 12px 14px;
+  }
+
+  .docmeta dt {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 4px;
+  }
+
+  .docmeta dd {
+    margin: 0;
+    font-size: 0.94rem;
+    font-weight: 600;
+  }
+
+  .draft { color: var(--signal); }
+
+  /* ---------- sections ---------- */
+
+  section { margin-block-start: 52px; }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.32rem;
+    letter-spacing: -0.012em;
+    margin: 0 0 6px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  h2 .num {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--signal);
+    flex: none;
+  }
+
+  .note {
+    color: var(--ink-2);
+    max-width: 46rem;
+    margin-block: 16px;
+  }
+
+  .note:last-child { margin-bottom: 0; }
+
+  /* ---------- figure ---------- */
+
+  figure {
+    margin: 22px 0 0;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 22px 18px 16px;
+  }
+
+  figure svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    color: var(--ink-2);
+  }
+
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--ink-3);
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    max-width: 44rem;
+  }
+
+  /* ---------- routing table ---------- */
+
+  .tablewrap {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    margin-top: 22px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+    min-width: 40rem;
+  }
+
+  thead th {
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule-strong);
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  .type {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .roles {
+    color: var(--ink-2);
+    line-height: 1.4;
+  }
+
+  .sla {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: var(--ink-2);
+  }
+
+  .fill {
+    display: block;
+    border-bottom: 1px dotted var(--rule-strong);
+    min-width: 8rem;
+    height: 1.35em;
+  }
+
+  .fill + .fill { margin-top: 7px; }
+
+  tr.fallback td {
+    background: var(--signal-soft);
+  }
+
+  tr.fallback .type { color: var(--signal); }
+
+  /* ---------- callout ---------- */
+
+  .callout {
+    margin-top: 22px;
+    border-left: 3px solid var(--signal);
+    background: var(--surface);
+    padding: 16px 18px;
+  }
+
+  .callout p { margin: 0; color: var(--ink-2); }
+  .callout p + p { margin-top: 10px; }
+  .callout strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- stage list ---------- */
+
+  ol.stages {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  ol.stages li {
+    background: var(--surface);
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: 2.2rem 1fr;
+    gap: 4px 12px;
+    align-items: baseline;
+  }
+
+  ol.stages .step {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--signal);
+  }
+
+  ol.stages h3 {
+    font-family: var(--display);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  ol.stages p {
+    grid-column: 2;
+    margin: 4px 0 0;
+    color: var(--ink-2);
+    font-size: 0.94rem;
+  }
+
+  /* ---------- scope list ---------- */
+
+  ul.scope {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  ul.scope li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: baseline;
+    color: var(--ink-2);
+    font-size: 0.96rem;
+  }
+
+  ul.scope .mark {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--stop);
+    border: 1px solid currentColor;
+    padding: 1px 6px;
+    white-space: nowrap;
+  }
+
+  ul.scope strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- sign-off ---------- */
+
+  .signoff {
+    margin-top: 22px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface);
+  }
+
+  .signrow {
+    display: grid;
+    grid-template-columns: 1.4fr 1.4fr 0.8fr;
+    gap: 22px;
+    padding: 20px 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .signrow:last-child { border-bottom: none; }
+
+  .signrow > div { min-width: 0; }
+
+  .signlabel {
+    font-family: var(--mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 20px;
+  }
+
+  .signline {
+    border-bottom: 1px solid var(--rule-strong);
+    height: 1px;
+  }
+
+  .signhint {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    margin-top: 7px;
+  }
+
+  @media (max-width: 640px) {
+    .signrow { grid-template-columns: 1fr; gap: 26px; }
+    ol.stages li { grid-template-columns: 1fr; }
+    ol.stages p { grid-column: 1; }
+  }
+
+  footer {
+    margin-top: 54px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+</style>
+
+<div class="sheet">
+
+  <p class="eyebrow">Engineering Work Request</p>
+  <h1>EWR Routing Sign-Off</h1>
+  <p class="lede">
+    Before this workflow is built, the approval chain below needs to be confirmed
+    by the people who own it. <strong>Please correct any row that is wrong and
+    write in the name for each role</strong> — once signed, this is what gets
+    configured.
+  </p>
+
+  <dl class="docmeta">
+    <div>
+      <dt>Prepared by</dt>
+      <dd><span class="fill"></span></dd>
+    </div>
+    <div>
+      <dt>Date issued</dt>
+      <dd><span class="fill"></span></dd>
+    </div>
+    <div>
+      <dt>Applies to</dt>
+      <dd><span class="fill"></span></dd>
+    </div>
+    <div>
+      <dt>Status</dt>
+      <dd class="draft">Draft — for approval</dd>
+    </div>
+  </dl>
+
+  <section>
+    <h2><span class="num">01</span> How a request travels</h2>
+    <p class="note">
+      A requester fills in one short form. Everything after that is automatic —
+      no one forwards anything, and nothing sits in an inbox waiting to be passed
+      along.
+    </p>
+
+    <figure>
+      <svg viewBox="0 0 720 260" role="img"
+           aria-label="An engineering work request goes from one form into a router that reads the request type, then notifies every approver for that type at the same time; once all have responded the decision is written to the request record and the requester is notified.">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5"
+                  markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,0 10,5 0,10" fill="currentColor"></polygon>
+          </marker>
+        </defs>
+
+        <!-- stage 1: form -->
+        <rect x="8" y="98" width="118" height="62" fill="none"
+              stroke="currentColor" stroke-width="1.5"></rect>
+        <text x="67" y="124" text-anchor="middle" font-size="13"
+              font-weight="600" fill="currentColor">One form</text>
+        <text x="67" y="142" text-anchor="middle" font-size="11"
+              fill="currentColor" opacity="0.72">7 questions</text>
+
+        <line x1="126" y1="129" x2="178" y2="129" stroke="currentColor"
+              stroke-width="1.5" marker-end="url(#ar)"></line>
+
+        <!-- stage 2: router -->
+        <rect x="180" y="98" width="118" height="62" fill="none"
+              stroke="#A8500F" stroke-width="2"></rect>
+        <text x="239" y="124" text-anchor="middle" font-size="13"
+              font-weight="600" fill="#A8500F">Router</text>
+        <text x="239" y="142" text-anchor="middle" font-size="11"
+              fill="#A8500F" opacity="0.85">reads request type</text>
+
+        <!-- fan out to three approvers, simultaneous -->
+        <path d="M298 129 H 330 V 46 H 398" fill="none" stroke="currentColor"
+              stroke-width="1.5" marker-end="url(#ar)"></path>
+        <path d="M298 129 H 398" fill="none" stroke="currentColor"
+              stroke-width="1.5" marker-end="url(#ar)"></path>
+        <path d="M298 129 H 330 V 212 H 398" fill="none" stroke="currentColor"
+              stroke-width="1.5" marker-end="url(#ar)"></path>
+
+        <text x="352" y="112" text-anchor="middle" font-size="10.5"
+              fill="currentColor" opacity="0.72">all at once</text>
+
+        <rect x="400" y="24" width="140" height="44" fill="none"
+              stroke="currentColor" stroke-width="1.5"></rect>
+        <text x="470" y="51" text-anchor="middle" font-size="12"
+              fill="currentColor">Approver 1</text>
+
+        <rect x="400" y="107" width="140" height="44" fill="none"
+              stroke="currentColor" stroke-width="1.5"></rect>
+        <text x="470" y="134" text-anchor="middle" font-size="12"
+              fill="currentColor">Approver 2</text>
+
+        <rect x="400" y="190" width="140" height="44" fill="none"
+              stroke="currentColor" stroke-width="1.5"></rect>
+        <text x="470" y="217" text-anchor="middle" font-size="12"
+              fill="currentColor">Approver 3</text>
+
+        <!-- converge -->
+        <path d="M540 46 H 578 V 129" fill="none" stroke="currentColor"
+              stroke-width="1.5"></path>
+        <path d="M540 212 H 578 V 129" fill="none" stroke="currentColor"
+              stroke-width="1.5"></path>
+        <path d="M540 129 H 600" fill="none" stroke="currentColor"
+              stroke-width="1.5" marker-end="url(#ar)"></path>
+
+        <text x="578" y="152" text-anchor="middle" font-size="10.5"
+              fill="currentColor" opacity="0.72">all must reply</text>
+
+        <rect x="602" y="98" width="110" height="62" fill="none"
+              stroke="currentColor" stroke-width="1.5"></rect>
+        <text x="657" y="124" text-anchor="middle" font-size="13"
+              font-weight="600" fill="currentColor">Record</text>
+        <text x="657" y="142" text-anchor="middle" font-size="11"
+              fill="currentColor" opacity="0.72">+ requester told</text>
+      </svg>
+      <figcaption>
+        Every approver for a request type is notified at the same moment, not one
+        after another — so a two-person chain takes as long as the slower person,
+        not both added together. The request is only marked approved once all of
+        them have replied.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span> Routing to confirm</h2>
+    <p class="note">
+      This is the part that needs your sign-off. The request type a person picks
+      on the form decides who is asked to approve it — nothing else. Write in the
+      person for each role, and cross out or add rows as needed.
+    </p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Request type</th>
+            <th scope="col">Goes to these roles</th>
+            <th scope="col">Person (please confirm)</th>
+            <th scope="col">Target reply</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="type">EHS</td>
+            <td class="roles">EHS Manager<br>Operations Director</td>
+            <td><span class="fill"></span><span class="fill"></span></td>
+            <td class="sla">3 days</td>
+          </tr>
+          <tr>
+            <td class="type">Maintenance</td>
+            <td class="roles">Maintenance Manager<br>Plant Manager</td>
+            <td><span class="fill"></span><span class="fill"></span></td>
+            <td class="sla">3 days</td>
+          </tr>
+          <tr>
+            <td class="type">Engineering</td>
+            <td class="roles">Engineering Manager<br>Plant Manager</td>
+            <td><span class="fill"></span><span class="fill"></span></td>
+            <td class="sla">5 days</td>
+          </tr>
+          <tr>
+            <td class="type">Facilities</td>
+            <td class="roles">Facilities Manager</td>
+            <td><span class="fill"></span></td>
+            <td class="sla">3 days</td>
+          </tr>
+          <tr>
+            <td class="type">IT</td>
+            <td class="roles">IT Manager</td>
+            <td><span class="fill"></span></td>
+            <td class="sla">3 days</td>
+          </tr>
+          <tr class="fallback">
+            <td class="type">Anything else</td>
+            <td class="roles">Falls back to the workflow owner, who routes it by hand</td>
+            <td><span class="fill"></span></td>
+            <td class="sla">next day</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p>
+        <strong>The last row is deliberate.</strong> If someone picks a type that
+        has no rule yet, the request goes to a named person rather than
+        disappearing. Every request reaches a human, always.
+      </p>
+      <p>
+        <strong>One number, one request.</strong> Each request gets a permanent
+        number — EWR #1, #2, #3 — assigned automatically and never reused. Quote
+        it in any conversation about that request.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span> What an approver does</h2>
+    <ol class="stages">
+      <li>
+        <span class="step">01</span>
+        <h3>Gets a notification</h3>
+        <p>
+          By email, and in the Approvals area of Microsoft Teams. It contains the
+          full request — what, where, why, need-by date and estimated cost — so
+          there is nothing to go and look up.
+        </p>
+      </li>
+      <li>
+        <span class="step">02</span>
+        <h3>Clicks Approve or Reject, adds a comment</h3>
+        <p>
+          No new system to learn and no password to remember. The comment is
+          saved with the request and is what the requester sees.
+        </p>
+      </li>
+      <li>
+        <span class="step">03</span>
+        <h3>That's it</h3>
+        <p>
+          The record updates and the requester is told the outcome automatically.
+          Nobody has to email anyone to close the loop.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span> Not in the first version</h2>
+    <p class="note">
+      Named here so there are no surprises. Each of these is a deliberate
+      omission to get the workflow running, not an oversight — and each can be
+      added once the routing above is trusted.
+    </p>
+    <ul class="scope">
+      <li>
+        <span class="mark">LATER</span>
+        <span><strong>Spend thresholds.</strong> A $2,000 request and a $200,000
+        request follow the same path. Approvers escalate as they do today.</span>
+      </li>
+      <li>
+        <span class="mark">LATER</span>
+        <span><strong>Automatic reminders.</strong> Nothing chases a late
+        approver. A pending list is reviewed weekly instead.</span>
+      </li>
+      <li>
+        <span class="mark">LATER</span>
+        <span><strong>Attachments.</strong> No drawings or photos on the form; an
+        approver asks for them if needed.</span>
+      </li>
+      <li>
+        <span class="mark">LATER</span>
+        <span><strong>Editing a submitted request.</strong> A rejected request is
+        resubmitted rather than corrected in place.</span>
+      </li>
+      <li>
+        <span class="mark">LATER</span>
+        <span><strong>Cover for absence.</strong> If an approver is away, their
+        request waits. Add a backup name above if that is unacceptable for a
+        given row.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span> Approval of this routing</h2>
+    <p class="note">
+      By signing, you confirm the request types, roles and people in section 02
+      are correct for your area, and that the exclusions in section 04 are
+      acceptable for a first version.
+    </p>
+
+    <div class="signoff">
+      <div class="signrow">
+        <div>
+          <div class="signlabel">Name &amp; role</div>
+          <div class="signline"></div>
+          <div class="signhint">Process owner</div>
+        </div>
+        <div>
+          <div class="signlabel">Signature</div>
+          <div class="signline"></div>
+        </div>
+        <div>
+          <div class="signlabel">Date</div>
+          <div class="signline"></div>
+        </div>
+      </div>
+      <div class="signrow">
+        <div>
+          <div class="signlabel">Name &amp; role</div>
+          <div class="signline"></div>
+          <div class="signhint">Operations / plant management</div>
+        </div>
+        <div>
+          <div class="signlabel">Signature</div>
+          <div class="signline"></div>
+        </div>
+        <div>
+          <div class="signlabel">Date</div>
+          <div class="signline"></div>
+        </div>
+      </div>
+      <div class="signrow">
+        <div>
+          <div class="signlabel">Name &amp; role</div>
+          <div class="signline"></div>
+          <div class="signhint">Optional — additional approver</div>
+        </div>
+        <div>
+          <div class="signlabel">Signature</div>
+          <div class="signline"></div>
+        </div>
+        <div>
+          <div class="signlabel">Date</div>
+          <div class="signline"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>EWR Request &amp; Approval Routing</span>
+    <span>Version 1 — draft for approval</span>
+    <span>Microsoft Forms · Power Automate · SharePoint</span>
+  </footer>
+
+</div>
