@@ -221,6 +221,66 @@ Notes:
 
 ---
 
+## Step 5 — Pre-launch checklist
+
+Work top to bottom. Everything in **Reliability** ships before the first real
+request; **Polish** is optional but cheap; **Pilot** decides whether you launch.
+
+### Reliability — do not launch without these
+
+- [ ] **Failure path on every write action.** On `Create item` and the approval
+      action: **⋯ → Configure run after → has failed**, branching to an email to
+      yourself. Without this a broken flow fails *silently* and a request simply
+      disappears. One lost request costs more credibility than every cosmetic
+      item below earns.
+- [ ] **Default case in the Switch** still present and pointing at a real mailbox.
+- [ ] **Flow renamed and actions renamed** — "Route by request type", not
+      "Switch 2". Six months from now the run history has to be readable.
+- [ ] **A second owner added to the flow** (Power Automate → flow → Share). A
+      single-owner flow dies with your account.
+- [ ] **One end-to-end test per request type**, approved *and* rejected, with
+      real approver addresses in place.
+
+### Polish — high payoff, low risk
+
+- [ ] **Color-code `Status`.** Column header → **Column settings → Format this
+      column** → choice pills: Submitted amber, Approved green, Rejected red.
+      Best perceived-quality-per-minute change available.
+- [ ] **Name the approvers in the confirmation email.** "Sent to Dave Smith and
+      Amy Jones for approval. Typical turnaround is 3 business days." This is the
+      single biggest jump in how the workflow feels — it turns a black box into a
+      visible process and kills most "did anyone get this?" follow-ups.
+- [ ] **A front-door site page**: a button linking to the form, the list embedded
+      as a **My Requests** view, and two sentences on what happens next. One link
+      you send to everyone, forever.
+- [ ] **Named views**: `Pending` (Status = Submitted, oldest first, grouped by
+      RequestType), `My Requests` (Requester = `[Me]` — resolves per viewer),
+      `Approved`.
+- [ ] **Form finish**: theme color, a welcome paragraph saying what an EWR is and
+      what happens after submitting, example text under the vague questions, and a
+      **custom thank-you message** containing the tracking link — it is the last
+      thing a requester sees.
+- [ ] **Store approver display names**, not email addresses, in `Approvers`.
+- [ ] **Scannable approval title**: `EWR #14 · EHS · Guard rail on mezzanine`.
+
+### Pilot — before anyone else hears about it
+
+- [ ] **Five real requests from friendly users** who will say "this is confusing"
+      rather than quietly reverting to email.
+- [ ] **Fix what they trip over, then announce.** A rocky launch is the hardest
+      thing to recover from with a voluntary system — people who bounce off once
+      do not come back for months.
+- [ ] **Delete the test rows** (the ID counter keeps going; gaps are fine).
+
+### Freeze rule
+
+From the pilot onward, **cosmetic changes are safe; logic changes are not.**
+Wording, color, views and pages can change up to launch morning. Cost tiers,
+extra approval stages, attachments and reminder loops are new failure modes that
+have not been tested — they go in v2, after real requests have flowed through.
+
+---
+
 ## Known limits
 
 Accepted on purpose, each with the workaround for now:
