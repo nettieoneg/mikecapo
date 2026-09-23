@@ -167,8 +167,12 @@ flow waits until every person listed has responded.
 **If yes:**
 - SharePoint → **Update item**: `Status` = `Approved`,
   `DecisionDate` = `utcNow()`, `DecisionComments` =
-  `join(body('Start_and_wait_for_an_approval')?['responses'], ' | ')`
-  — or simply map the first response's Comments if that expression is fiddly.
+  `first(body('Start_and_wait_for_an_approval')?['responses'])?['comments']`
+  — this captures the first approver's comment. `responses` is an array of
+  objects, so `join()` over it does **not** work; to capture every comment, add a
+  **Select** action mapping `comments` and `join()` the Select's output instead.
+  **Update item re-shows every required column and blanks any you leave empty** —
+  re-map `Request Title` here or it is wiped.
 - Outlook → **Send an email (V2)** to `Requester`: "EWR #ID approved."
 
 **If no:**
