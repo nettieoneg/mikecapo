@@ -1,0 +1,17 @@
+{
+  "description": "After Claude writes or edits an .html file, check it for a missing <title> and for images without alt text.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/check-html.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
