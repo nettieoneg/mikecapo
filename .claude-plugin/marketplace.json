@@ -1,0 +1,14 @@
+{
+  "name": "mikecapo",
+  "owner": {
+    "name": "nettieoneg"
+  },
+  "description": "Claude Code plugins from the mikecapo portfolio repo.",
+  "plugins": [
+    {
+      "name": "starter-kit",
+      "source": "./plugins/starter-kit",
+      "description": "A small, commented example plugin with one command, one skill, one agent and one hook."
+    }
+  ]
+}

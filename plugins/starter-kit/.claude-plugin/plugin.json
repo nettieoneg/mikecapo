@@ -1,0 +1,10 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "starter-kit",
+  "version": "0.1.0",
+  "description": "A small, commented example plugin with one command, one skill, one agent and one hook.",
+  "author": {
+    "name": "nettieoneg"
+  },
+  "keywords": ["starter", "template", "example"]
+}
